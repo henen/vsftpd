@@ -22,7 +22,7 @@ RUN sed -i "s/anonymous_enable=YES/anonymous_enable=NO/" /etc/vsftpd.conf
 
 VOLUME ["/root", "/app"]
 ADD run.sh /run.sh
-
+ADD chmod -R 777 /run.sh
 EXPOSE 21
-CMD ["/run.sh"]
+CMD /run.sh
 
